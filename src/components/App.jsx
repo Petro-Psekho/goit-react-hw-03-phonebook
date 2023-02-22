@@ -22,6 +22,7 @@ class App extends Component {
     const parseContacts = JSON.parse(contacts);
 
     if (parseContacts) {
+      // this.setState({ contacts: parseContacts });
       this.setState({ contacts: parseContacts });
     }
   }
