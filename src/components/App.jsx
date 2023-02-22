@@ -22,7 +22,6 @@ class App extends Component {
     const parseContacts = JSON.parse(contacts);
 
     if (parseContacts) {
-      // this.setState({ contacts: parseContacts });
       this.setState({ contacts: parseContacts });
     }
   }
@@ -40,8 +39,11 @@ class App extends Component {
     if (currentName)
       return alert(currentName.name + ' is already in contacts.');
 
-    data.id = nanoid();
-    this.setState(prev => ({ contacts: [data, ...prev.contacts] }));
+    // data.id = nanoid();
+    // this.setState(prev => ({ contacts: [data, ...prev.contacts] }));
+    this.setState(prev => ({
+      contacts: [{ ...data, id: nanoid() }, ...prev.contacts],
+    }));
   };
 
   changeFilter = e => {
